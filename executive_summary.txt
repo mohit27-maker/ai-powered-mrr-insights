@@ -1,0 +1,11 @@
+**Executive Summary**
+
+**Overall Trend**  
+Ending MRR grew consistently every month across the 24-month period, expanding from 16880.0 in January 2024 to 482998.0 by December 2025. 
+
+**Growth and Decline Drivers**  
+* **Primary Growth Driver:** New MRR was the primary catalyst for growth, scaling from 16880.0 in January 2024 to a peak of 39238.0 in September 2025.  
+* **Primary Drag:** Churn was the largest offset to revenue, increasing steadily from 0.0 in January 2024 to -18759.0 in December 2025. Contraction also increased over time, reaching its highest loss of -2550.0 in October 2025.
+
+**Flagged Anomalies**  
+Only one anomaly was flagged: **October 2025 (2025-10-01)** registered an **Expansion anomaly**, with Expansion surging to 7340.0. This drove the period's highest net MRR change of 27363.0, bringing ending MRR to 448488.0.
