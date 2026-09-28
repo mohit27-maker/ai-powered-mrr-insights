@@ -4,7 +4,7 @@ A SQL → Python → LLM → Power BI pipeline that turns raw SaaS transaction d
 
 `SQL` `Python` `Gemini API` `Power BI` `Pandas` `MySQL`
 
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](dashboard.png)
 
 ## 🎯 Problem
 
@@ -31,7 +31,7 @@ Data → SQL aggregation → Python stats & anomaly flags → LLM narrative → 
 
 ## 🖥️ Dashboard
 
-![Waterfall Chart](screenshots/waterfall_chart.png)
+![Waterfall Chart](waterfall_chart.png)
 
 MRR movement waterfall (left) and cumulative ending-MRR trend (right), with a month-range slicer and the AI-generated executive summary displayed alongside.
 
