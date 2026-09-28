@@ -143,6 +143,18 @@ Open `ai_insight_dashboard.pbix` in Power BI Desktop and point it at your MySQL 
 - **Explainable anomaly detection**: uses a simple z-score threshold rather than a black-box ML model, so the method is fully explainable in an interview setting.
 - **Static vs. live summary**: the Power BI text card currently displays a manually-pasted copy of the latest summary. A production version would push the LLM output into a SQL table that Power BI reads live on refresh.
 
+## 🔮 Future Improvements
+
+This is a working end-to-end prototype, and there are a few things I'd tackle next:
+
+- **Live summary in Power BI.** The AI summary is currently pasted into a text box by hand. The fix is to write the LLM output into a SQL table so the dashboard picks it up on every refresh.
+- **Scheduled runs.** The pipeline runs on demand. Wrapping it in a scheduler (Windows Task Scheduler, cron, or Airflow) would generate a fresh summary after each data load.
+- **Sturdier anomaly detection.** A z-score over 24 monthly points is simple and explainable, but it's sensitive on small samples. With more history I'd compare rolling-window z-scores, IQR, or seasonal decomposition.
+- **Credentials in `.env`.** The MySQL connection string is currently set inside the script. Moving the database credentials into `.env` alongside the API key would be cleaner and safer.
+- **More than MRR.** The same pattern (SQL aggregate, stats, grounded prompt) could cover cohort retention and churn by segment, which already exist as views in the source project.
+- **Output validation.** A check that every number in the LLM summary appears in the input stats would turn "grounded by design" into "grounded by verification."
+- **Tests.** Unit tests for the pivot and anomaly functions, so changes to the pipeline don't silently break the numbers.
+
 ## 🎯 Use Cases
 
 - **Analysts** — skip manual write-ups after every reporting cycle
